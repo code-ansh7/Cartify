@@ -1,27 +1,21 @@
-
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // Brand Colors
-  static const Color primary = Color(0xFFD95D39);
-  static const Color primaryDark = Color(0xFFB9472B);
-
-  // Light Theme
-  static const Color background = Color(0xFFFFF9F2);
-  static const Color surface = Color(0xFFFFFFFF);
-  static const Color softPeach = Color(0xFFF2E4D8);
-
-  // Text Colors
-  static const Color textPrimary = Color(0xFF292522);
-  static const Color textSecondary = Color(0xFF85776D);
-
-  // Borders and Icons
-  static const Color border = Color(0xFFEFE4DA);
-  static const Color iconBackground = Color(0xFFF2E4D8);
-
-  // Dark Theme
-  static const Color darkBackground = Color(0xFF1C1917);
-  static const Color darkSurface = Color(0xFF292522);
-  static const Color darkTextPrimary = Color(0xFFFFF9F2);
-  static const Color darkTextSecondary = Color(0xFFB8AAA0);
+  static const Color primary = Color(
+    0xFFC85A32,
+  ); // Warm Terracotta / Rust Orange
+  static const Color primaryVariant = Color(0xFFA64420);
+  static const Color background = Color(
+    0xFFFBF9F7,
+  ); // Soft Cream / Off-White Background
+  static const Color surface = Colors.white;
+  static const Color textDark = Color(
+    0xFF2B2321,
+  ); // Deep Charcoal / Warm Dark Brown
+  static const Color textMuted = Color(0xFF8C827E); // Muted Grey-Brown
+  static const Color mintGreen = Color(0xFF10B981);
+  static const Color softOrange = Color(0xFFD96B43);
+  static const Color border = Color(0xFFE8E2DD); // Soft warm border
+  static const Color error = Color(0xFFEF4444);
+  static const Color favIcon = Color.fromARGB(255, 245, 31, 31);
 }
