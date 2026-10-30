@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:novamart/screens/get_details.dart';
 import 'package:novamart/screens/order_screen.dart';
 import 'package:provider/provider.dart';
-
 import '../providers/cart_provider.dart';
 import '../app/app_colors.dart';
 import '../widgets/quantity_stepper.dart';
