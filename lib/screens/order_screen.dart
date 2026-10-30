@@ -4,7 +4,16 @@ import '../providers/cart_provider.dart';
 import '../app/app_colors.dart';
 
 class OrderScreen extends StatelessWidget {
-  const OrderScreen({super.key});
+  final String name;
+  final String address;
+  final String paymentMethod;
+
+  const OrderScreen({
+    super.key,
+    required this.name,
+    required this.address,
+    required this.paymentMethod
+  });
 
   @override
   Widget build(BuildContext context) {

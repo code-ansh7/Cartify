@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:novamart/screens/cart_screen.dart';
 import 'package:provider/provider.dart';
 import '../models/product.dart';
 import '../providers/cart_provider.dart';
@@ -127,13 +129,13 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     Row(
                       children: [
                         Text(
-                          '₹${widget.product.price.toStringAsFixed(0)}',
+                          '₹${((widget.product.price) * (_selectedQuantity)).toStringAsFixed(0)}',
                           style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppColors.primary),
                         ),
                         if (widget.product.originalPrice != null) ...[
                           const SizedBox(width: 12),
                           Text(
-                            '₹${widget.product.originalPrice!.toStringAsFixed(0)}',
+                            '₹${((widget.product.originalPrice!) * (_selectedQuantity)).toStringAsFixed(0)}',
                             style: const TextStyle(
                               fontSize: 16,
                               decoration: TextDecoration.lineThrough,
@@ -201,15 +203,24 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
+
                         for (int i = 0; i < _selectedQuantity; i++) {
                           cartProvider.addProduct(widget.product);
                         }
+
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text('Added $_selectedQuantity item(s) to cart!'),
                             backgroundColor: AppColors.mintGreen,
                             duration: const Duration(seconds: 2),
                           ),
+                        );
+
+                        Navigator.push(
+                          context, 
+                          CupertinoPageRoute(
+                            builder: (context) => CartScreen()
+                          )
                         );
                       },
                       child: const Text('Add to Cart'),

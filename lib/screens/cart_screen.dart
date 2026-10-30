@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:novamart/screens/get_details.dart';
+import 'package:novamart/screens/order_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/cart_provider.dart';
 import '../app/app_colors.dart';
 import '../widgets/quantity_stepper.dart';
-import 'order_screen.dart';
+// import 'order_screen.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -126,7 +128,9 @@ class CartScreen extends StatelessWidget {
                                     ),
                                     const SizedBox(height: 4),
                                     Text(
-                                      '₹${item.product.price.toStringAsFixed(0)}',
+
+                                    '₹${cartProvider.subtotal.toStringAsFixed(0)}',// isko hi change krna hai 
+
                                       style: const TextStyle(
                                         color: AppColors.primary,
                                         fontWeight: FontWeight.bold,
@@ -222,12 +226,25 @@ class CartScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const OrderScreen(),
+                            builder: (context) => const OrderScreen(
+                              name: '',
+                              address: '',
+                              paymentMethod: '',
+                            ),
                           ),
                         );
+
+                        // showDialog(
+                        //   context: context, 
+                        //   builder: (
+                        //     (context) => GetDetails()
+                        //   )
+                        // );
                       },
                       child: const Text('Proceed to Checkout'),
                     ),
+
+                    SizedBox(height: 20,)
                   ],
                 ),
               ),

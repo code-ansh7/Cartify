@@ -115,6 +115,17 @@ class ProfileScreen extends StatelessWidget {
                         );
                       },
                     ),
+                    const Divider(height: 1),
+                    ListTile(
+                      leading: const Icon(Icons.engineering, color: AppColors.primary),
+                      title: const Text('Made by ANSH RASTOGI'),
+                      trailing: const Icon(Icons.chevron_right),
+                      onTap: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Made by ER. ANSH RASTOGI')),
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),
