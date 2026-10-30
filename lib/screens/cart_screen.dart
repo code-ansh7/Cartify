@@ -17,7 +17,7 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Shopping Cart',
+          'My Orders',
           style: TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
