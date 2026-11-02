@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import '../providers/cart_provider.dart';
 import '../app/app_colors.dart';
 import '../widgets/quantity_stepper.dart';
-// import 'order_screen.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -12,7 +11,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cartProvider = context.watch<CartProvider>();
-    final cartItems = cartProvider.items.values.toList();
+    final cartItems = cartProvider.items;
 
     return Scaffold(
       appBar: AppBar(
