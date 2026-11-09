@@ -21,7 +21,7 @@ class OrderScreen extends StatelessWidget {
     final totalAmount = cartProvider.finalTotal;
     final orderId = 'ORD-${DateTime.now().millisecondsSinceEpoch.toString().substring(5)}';
 
-    return Scaffold(
+    return Scaffold( 
       appBar: AppBar(
         title: const Text('Order Confirmation'),
       ),
