@@ -1,4 +1,4 @@
-# novamart
+# Cartify
 
 A new Flutter project.
 
