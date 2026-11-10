@@ -4,6 +4,8 @@ import '../models/product.dart';
 import '../app/app_colors.dart';
 import '../widgets/product_card.dart';
 import '../widgets/category_chip.dart';
+import '../providers/product_provider.dart'; 
+import '../widgets/product_card.dart';
 
 class ExploreScreen extends StatefulWidget {
   final String? initialCategory;
@@ -26,10 +28,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
   @override
   void initState() {
     super.initState();
+    
     _searchController = TextEditingController();
     if (widget.initialCategory != null && _categories.contains(widget.initialCategory)) {
       _selectedCategory = widget.initialCategory!;
     }
+ 
   }
 
   @override
@@ -175,6 +179,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           ),
                         ],
                       ),
+
+                    //  child:  CircularProgressIndicator()
                     )
                   : GridView.builder(
                       padding: const EdgeInsets.all(16),
